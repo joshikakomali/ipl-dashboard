@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-navy: #0f172a;
+  --color-brand-slate: #334155;
+  --color-brand-gold: #d4a95f;
+  --color-brand-ice: #eef4fb;
+  --color-brand-dark: #09111f;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #0f172a;
+  background:
+    radial-gradient(circle at top left, rgba(212, 169, 95, 0.12), transparent 30%),
+    radial-gradient(circle at top right, rgba(59, 130, 246, 0.10), transparent 28%),
+    linear-gradient(180deg, #f7fbff 0%, #eef4fb 45%, #e7eef7 100%);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(15, 23, 42, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: linear-gradient(180deg, rgba(0,0,0,0.42), transparent 85%);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+}
+
+.glass-shell {
+  background: linear-gradient(180deg, rgba(255,255,255,0.84), rgba(255,255,255,0.68));
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.55);
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.09);
+}
+
+.glass-dark {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(30, 41, 59, 0.80));
+  backdrop-filter: blur(22px);
+  border: 1px solid rgba(255,255,255,0.10);
+  box-shadow: 0 28px 60px rgba(15, 23, 42, 0.20);
+}
+
+::selection {
+  background: rgba(212, 169, 95, 0.28);
+  color: #0f172a;
+}
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Smooth animation */
+* {
+  transition: all 0.3s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #eef4fb;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    #d4a95f,
+    #0f172a
+  );
+  border-radius: 20px;
+}
+
+/* Selection */
+::selection {
+  background: rgba(212, 169, 95, 0.35);
+  color: #07111f;
+}
+
+/* Glow Animation */
+@keyframes floatGlow {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.glow-animation {
+  animation: floatGlow 5s ease-in-out infinite;
+}
